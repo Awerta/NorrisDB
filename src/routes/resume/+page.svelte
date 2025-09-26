@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	// Resume sections as reusable components
 	import WorkExperience from '$lib/resume/workExperience/workExperience.svelte';
 	import EducationHistory from '$lib/resume/educationHistory/EducationHistory.svelte';

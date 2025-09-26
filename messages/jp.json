@@ -20,6 +20,7 @@
 	"residence": "居住地",
 	"residence_value": "日本",
 	"stack": "技術スタック",
+	"e404_message": "ページが見つかりません",
 	"about_me": "自己紹介",
 	"about_me_hi": "こんにちは！{name}。",
 	"about_me_text": "アルメニアのイェレバン出身のフロントエンドデベロッパーです。ウェブデザインとWordPressが得意です。",

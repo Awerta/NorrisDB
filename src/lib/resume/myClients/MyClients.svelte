@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
 	import '@splidejs/svelte-splide/css';
 	import { m } from '$lib/paraglide/messages';

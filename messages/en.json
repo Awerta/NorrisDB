@@ -20,6 +20,7 @@
 	"residence": "Residence",
 	"residence_value": "Japan",
 	"stack": "Stack",
+	"e404_message": "Page Not Found",
 	"about_me": "About Me",
 	"about_me_hi": "Hello! I’m {name}.",
 	"about_me_text": "a Front-end Developer from Yerevan, Armenia, skilled in web design and WordPress.",

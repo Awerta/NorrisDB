@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { setLocale, getLocale } from '$lib/paraglide/runtime';
 	import { m } from '$lib/paraglide/messages';

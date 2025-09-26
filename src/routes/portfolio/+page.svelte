@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte'; // Lifecycle hook for client-side init
 	import { m } from '$lib/paraglide/messages.js'; // localized messages (m) for multi-language text
 	import _ from 'lodash'; // Utility library (capitalize used here)
-	import '../../../../node_modules/glightbox/dist/css/glightbox.min.css'; // Lightbox CSS
+	import '../../../node_modules/glightbox/dist/css/glightbox.min.css'; // Lightbox CSS
 	import { blur } from 'svelte/transition'; // Page transition effect
 	import { MetaTags } from 'svelte-meta-tags'; // For SEO meta tags
 	import { getLocale } from '$lib/paraglide/runtime'; // get current locale

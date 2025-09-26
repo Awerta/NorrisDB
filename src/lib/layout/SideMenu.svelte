@@ -10,7 +10,7 @@
 	import LanguagesDropdownMenu from './LanguagesDropdownMenu.svelte';
 
 	let selectedMenuItem = $derived(
-		(page.route.id ?? '').replace('/(app)', '').replace('/', '').toLowerCase()
+		(page.status === 404 ? '404' : (page.route.id ?? '')).replace('/', '').toLowerCase()
 	);
 
 	onMount(() => {

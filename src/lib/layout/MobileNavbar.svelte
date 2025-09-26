@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Intro from '$lib/intro/Intro.svelte';
 	import { m } from '$lib/paraglide/messages';
 	import { getLocale } from '$lib/paraglide/runtime';

@@ -20,6 +20,7 @@
 	"residence": "Lieu de résidence",
 	"residence_value": "Japon",
 	"stack": "Technologies",
+	"e404_message": "Page introuvable",
 	"about_me": "À propos de moi",
 	"about_me_hi": "Bonjour ! Je suis {name}.",
 	"about_me_text": "Développeur Front-end originaire d'Erevan, en Arménie, spécialisé en conception web et WordPress.",

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { m } from '$lib/paraglide/messages.js';
 	import Icon from '@iconify/svelte';
 </script>

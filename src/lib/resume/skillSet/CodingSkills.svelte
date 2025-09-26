@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import CircularProgress from '$lib/shared/circularProgress/CircularProgress.svelte';
 	import { m } from '$lib/paraglide/messages.js';
 </script>

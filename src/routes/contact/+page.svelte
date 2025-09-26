@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { m } from '$lib/paraglide/messages.js'; // localized messages (m) for multi-language text
 	import { blur } from 'svelte/transition'; // Svelte transition for blur effect on page load/unload
 	import Icon from '@iconify/svelte'; // Icon component from Iconify for displaying vector icons

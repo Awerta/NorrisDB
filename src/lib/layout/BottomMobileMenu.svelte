@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import ThemesPopup from './ThemesPopup.svelte';
 	import LanguagesPopup from './LanguagesPopup.svelte';
 	import menuItems from '$lib/layout/menuItems';
@@ -13,7 +13,7 @@
 	import { page } from '$app/state';
 
 	let selectedMenuItem = $derived(
-		(page.route.id ?? '').replace('/(app)', '').replace('/', '').toLowerCase()
+		(page.status === 404 ? '404' : (page.route.id ?? '')).replace('/', '').toLowerCase()
 	);
 
 	// NOTE: the element that is using one of the theme attributes must be in the DOM on mount

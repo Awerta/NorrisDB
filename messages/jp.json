@@ -21,7 +21,7 @@
 	"residence_value": "日本",
 	"stack": "技術スタック",
 	"about_me": "自己紹介",
-	"about_me_hi": "こんにちは！ジョン・ドウです。",
+	"about_me_hi": "こんにちは！{name}。",
 	"about_me_text": "アルメニアのイェレバン出身のフロントエンドデベロッパーです。ウェブデザインとWordPressが得意です。",
 	"total_visits": "総訪問数",
 	"total_visits_value": "先月より{number}%増加",

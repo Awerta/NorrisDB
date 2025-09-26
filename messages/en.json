@@ -21,7 +21,7 @@
 	"residence_value": "Japan",
 	"stack": "Stack",
 	"about_me": "About Me",
-	"about_me_hi": "Hello! I’m John Doe.",
+	"about_me_hi": "Hello! I’m {name}.",
 	"about_me_text": "a Front-end Developer from Yerevan, Armenia, skilled in web design and WordPress.",
 	"total_visits": "Total Visits",
 	"total_visits_value": "{number}% more than last month",

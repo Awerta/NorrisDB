@@ -1,2 +1,25 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+@import 'tailwind-scrollbar-hide/v4';
+@plugin "daisyui" {
+	themes: all;
+}
+
+/* @layer base {
+	@font-face {
+		font-family: 'Ubuntu';
+		font-style: normal;
+		font-display: swap;
+		src: url('/fonts/Ubuntu-Regular.woff2') format('woff2');
+	}
+} */
+html.locale-en,
+html.locale-es,
+html.locale-fr,
+html.locale-de {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+html.locale-jp {
+	font-family: 'Zen Maru Gothic', sans-serif;
+}

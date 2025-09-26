@@ -61,7 +61,11 @@
 		"@neondatabase/serverless": "^1.0.1",
 		"@node-rs/argon2": "^2.0.2",
 		"@splidejs/svelte-splide": "^0.2.9",
+		"@types/lodash": "^4.17.20",
+		"glightbox": "^3.3.1",
+		"i": "^0.3.7",
 		"lodash": "^4.17.21",
+		"mixitup": "^3.3.2",
 		"svelte-meta-tags": "^4.4.1",
 		"tailwind-scrollbar-hide": "^4.0.0",
 		"theme-change": "^2.5.0"

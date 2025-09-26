@@ -60,6 +60,7 @@
 	"dependencies": {
 		"@neondatabase/serverless": "^1.0.1",
 		"@node-rs/argon2": "^2.0.2",
+		"@splidejs/svelte-splide": "^0.2.9",
 		"lodash": "^4.17.21",
 		"svelte-meta-tags": "^4.4.1",
 		"tailwind-scrollbar-hide": "^4.0.0",

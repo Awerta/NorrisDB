@@ -1,0 +1,1 @@
+ALTER TABLE "knowledge_translation" ADD COLUMN "id" serial PRIMARY KEY NOT NULL;

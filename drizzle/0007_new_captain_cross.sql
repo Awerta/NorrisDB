@@ -1,0 +1,1 @@
+ALTER TABLE "service_translation" ADD COLUMN "id" serial PRIMARY KEY NOT NULL;

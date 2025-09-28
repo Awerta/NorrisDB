@@ -4,9 +4,12 @@
 	import CodingSkills from './CodingSkills.svelte';
 	import DesignSkills from './DesignSkills.svelte';
 	import LanguageSkills from './LanguageSkills.svelte';
+
+	let { resume_skill_set_language, resume_skill_set_coding_skill, resume_skill_set_design_skill } =
+		$props();
 </script>
 
-<div class="bg-base-300 rounded-box md:p-4 p-2">
+<div class="bg-base-300 rounded-box p-2 md:p-4">
 	<div class="mb-8 flex w-min items-center gap-2 text-nowrap text-2xl font-bold sm:text-3xl">
 		<Icon icon="hugeicons:ai-brain-04" class="text-base-content/80" />
 		<div class="relative">
@@ -18,8 +21,8 @@
 	</div>
 
 	<div class="grid gap-20">
-		<LanguageSkills />
-		<CodingSkills />
-		<DesignSkills />
+		<LanguageSkills {resume_skill_set_language} />
+		<CodingSkills {resume_skill_set_coding_skill} />
+		<DesignSkills {resume_skill_set_design_skill} />
 	</div>
 </div>

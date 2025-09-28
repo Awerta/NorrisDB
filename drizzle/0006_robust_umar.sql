@@ -1,0 +1,1 @@
+ALTER TABLE "skill" ALTER COLUMN "icon" DROP NOT NULL;

@@ -14,27 +14,34 @@
 
 	// Current locale state (for links and localized strings)
 	let currentLocale = $state(getLocale());
+
+	// Data provided from the route loader
+	let { data } = $props();
 </script>
 
 <!-- Resume main container with vertical spacing between sections -->
 <div transition:blur class="flex flex-col gap-4">
 	<!-- Work experience section -->
-	<WorkExperience />
+	<WorkExperience resume_work_experience={data.resume_work_experience} />
 
 	<!-- Education history section -->
-	<EducationHistory />
+	<EducationHistory resume_education={data.resume_education} />
 
 	<!-- Skills section -->
-	<SkillSet />
+	<SkillSet
+		resume_skill_set_language={data.resume_skill_set.resume_skill_language}
+		resume_skill_set_coding_skill={data.resume_skill_set.resume_coding_skill}
+		resume_skill_set_design_skill={data.resume_skill_set.resume_design_skill}
+	/>
 
 	<!-- Knowledge / expertise section -->
-	<Knowledge />
+	<Knowledge resume_knowledge={data.resume_knowledge} />
 
 	<!-- Services offered -->
-	<MyServices />
+	<MyServices resume_service={data.resume_services} />
 
 	<!-- Clients / portfolio section -->
-	<MyClients />
+	<MyClients resume_clients={data.resume_clients} />
 </div>
 
 <!-- SEO Meta Tags -->

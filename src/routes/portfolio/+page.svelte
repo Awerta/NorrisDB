@@ -261,7 +261,7 @@
 							<!-- Video lightbox trigger -->
 							<a
 								href={item.link}
-								class="videoPlayer btn btn-soft btn-xs hidden space-x-1 group-hover/item:flex"
+								class="videoPlayer btn btn-soft btn-xs flex space-x-1 group-hover/item:flex lg:hidden"
 							>
 								<Icon icon="hugeicons:video-01" class="size-5" />
 								<span>{m.watch_video()}</span>
@@ -270,7 +270,7 @@
 							<!-- Audio player -->
 							<a
 								href={item.img}
-								class="btn audioPlayer btn-soft btn-xs hidden space-x-1 group-hover/item:flex"
+								class="btn audioPlayer btn-soft btn-xs flex space-x-1 group-hover/item:flex lg:hidden"
 								data-glightbox="title: {item.title}; description: .audioContentDesc-{item.id}; descPosition: bottom;"
 							>
 								<Icon icon="hugeicons:music-note-03" class="size-5" />
@@ -286,7 +286,7 @@
 							<a
 								href={item.url}
 								target="_blank"
-								class="btn btn-soft btn-xs hidden space-x-1 group-hover/item:flex"
+								class="btn btn-soft btn-xs flex space-x-1 group-hover/item:flex lg:hidden"
 							>
 								<Icon icon="hugeicons:link-03" class="size-5" />
 								{m.visit_link()}
@@ -295,7 +295,7 @@
 							<!-- Single image lightbox -->
 							<a
 								href={item.img}
-								class="singleImage btn btn-soft btn-xs hidden space-x-1 group-hover/item:flex"
+								class="singleImage btn btn-soft btn-xs flex space-x-1 group-hover/item:flex lg:hidden"
 							>
 								<Icon icon="hugeicons:image-01" class="size-5" />
 								<span>{m.view_image()}</span>
@@ -305,7 +305,7 @@
 							<div>
 								<a
 									href={item.img}
-									class="btn contentShow btn-soft btn-xs hidden space-x-1 group-hover/item:flex"
+									class="btn contentShow btn-soft btn-xs flex space-x-1 group-hover/item:flex lg:hidden"
 									data-glightbox="title: {item.title}; description: .contentDesc-{item.id}; descPosition: right;"
 								>
 									<Icon icon="hugeicons:content-writing" class="size-5" />

@@ -1,0 +1,1 @@
+ALTER TABLE "about_translation" ADD COLUMN "short_bio" text NOT NULL;

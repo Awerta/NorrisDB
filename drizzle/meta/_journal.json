@@ -99,6 +99,34 @@
       "when": 1759058049075,
       "tag": "0013_talented_gamma_corps",
       "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1759058554939,
+      "tag": "0014_noisy_randall_flagg",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1759060726601,
+      "tag": "0015_chemical_warhawk",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1759065114659,
+      "tag": "0016_serious_living_lightning",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "7",
+      "when": 1759070531695,
+      "tag": "0017_medical_ares",
+      "breakpoints": true
     }
   ]
 }

@@ -3,6 +3,8 @@
 	import { MetaTags } from 'svelte-meta-tags'; // SEO meta tags
 	import { blur } from 'svelte/transition'; // Page transition
 	import { m } from '$lib/paraglide/messages.js'; // localized messages (m) for multi-language text
+
+	let { data } = $props();
 </script>
 
 <!-- Reusable snippet for key-value information -->
@@ -26,18 +28,17 @@
 		<div class="grid gap-8">
 			<!-- Introduction text -->
 			<div class="flex flex-col gap-1">
-				<span>{m.about_me_hi({name:m.name()})}</span>
-				<p>{m.about_me_text()}</p>
+				{@html data.translation.short_bio}
 			</div>
 
 			<!-- Personal information grid -->
 			<div class="grid grid-cols-1 gap-2 text-sm md:grid-cols-2 lg:grid-cols-3">
-				{@render textInfo(m.age(), '24')}
-				{@render textInfo(m.job(), m.job_value())}
-				{@render textInfo(m.freelance(), m.available())}
-				{@render textInfo(m.citizenship(), m.citizenship_value())}
-				{@render textInfo(m.residence(), m.residence_value())}
-				{@render textInfo(m.email(), 'Mandana@domain.com')}
+				{@render textInfo(m.age(), `${data.age}`)}
+				{@render textInfo(m.job(), `${data.latestJob.position}`)}
+				{@render textInfo(m.freelance(), `${data.freelance ? m.available() : m.unavailable()}`)}
+				{@render textInfo(m.citizenship(), `${data.translation.citizenship}`)}
+				{@render textInfo(m.residence(), `${data.translation.residence}`)}
+				{@render textInfo(m.email(), `${data.email}`)}
 			</div>
 
 			<!-- Download resume button (mobile only) -->

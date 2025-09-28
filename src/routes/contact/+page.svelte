@@ -7,6 +7,8 @@
 
 	// Current locale state (for links and localized strings)
 	let currentLocale = $state(getLocale());
+
+	let { data } = $props();
 </script>
 
 <!-- Page container with blur transition -->
@@ -44,7 +46,7 @@
 						<Icon icon="hugeicons:mail-01" class="size-5" />
 						<span class="font-bold">{m.email()}</span>
 					</div>
-					<a class="text-primary text-sm" href="mailto:Mandana@domain.com">Mandana@domain.com</a>
+					<a class="text-primary text-sm" href="mailto:{data.email}">{data.email}</a>
 				</div>
 
 				<!-- Phone info -->
@@ -53,7 +55,7 @@
 						<Icon icon="hugeicons:call-02" class="size-5" />
 						<span class="font-bold">{m.phone()}</span>
 					</div>
-					<a class="text-primary text-sm" href="tel:+817000000000">+817000000000</a>
+					<a class="text-primary text-sm" href="tel:{data.phone}">{data.phone}</a>
 				</div>
 
 				<!-- Physical address info -->
@@ -67,7 +69,7 @@
 						href="https://maps.app.goo.gl/c88jD1rKsDxk16Wy5"
 						target="_blank"
 					>
-						Kyoto, Japan
+						{data.translation.address}
 					</a>
 				</div>
 			</div>

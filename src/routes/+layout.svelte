@@ -9,7 +9,8 @@
 	import BottomMobileMenu from '$lib/layout/BottomMobileMenu.svelte';
 	import MobileNavbar from '$lib/layout/MobileNavbar.svelte';
 
-	let { children } = $props();
+	let { children, data } = $props();
+	console.log('main', data);
 </script>
 
 <svelte:head>
@@ -26,7 +27,7 @@
 			<SideMenu />
 			<div class="col-span-3 hidden lg:block">
 				<!-- Introduction Card -->
-				<Intro />
+				<Intro introData={data} />
 			</div>
 			<div
 				class="text-base-content relative col-span-2 flex flex-col justify-between gap-4 md:col-span-3 lg:col-span-8"

@@ -1,4 +1,5 @@
-import { pgTable, serial, char, text, integer, boolean } from 'drizzle-orm/pg-core';
+import { relations } from 'drizzle-orm';
+import { pgTable, serial, char, text, integer, boolean, numeric } from 'drizzle-orm/pg-core';
 
 export const about = pgTable('about', {
 	id: serial('id').primaryKey(), // always 1 row
@@ -7,8 +8,8 @@ export const about = pgTable('about', {
 	phone: char('phone', { length: 30 }),
 	age: integer('age'), // optional
 	freelance: boolean('freelance').notNull().default(false), // true/false
-	latitude: integer('latitude'),
-	longitude: integer('longitude')
+	latitude: numeric('latitude'), // float
+	longitude: numeric('longitude') // float
 });
 
 export const socialLink = pgTable('social_link', {
@@ -40,5 +41,34 @@ export const aboutTranslation = pgTable('about_translation', {
 	last_name: char('last_name', { length: 50 }).notNull(),
 	residence: char('residence', { length: 100 }).notNull(),
 	citizenship: char('citizenship', { length: 100 }).notNull(),
-	address: text('address').notNull()
+	address: text('address').notNull(),
+	short_bio: text('short_bio').notNull()
 });
+
+// --- about relations ---
+export const aboutRelations = relations(about, ({ many }) => ({
+	translations: many(aboutTranslation),
+	socialLinks: many(socialLink),
+	resumeFiles: many(resumeFile)
+}));
+
+export const aboutTranslationRelations = relations(aboutTranslation, ({ one }) => ({
+	about: one(about, {
+		fields: [aboutTranslation.about_id],
+		references: [about.id]
+	})
+}));
+
+export const socialLinkRelations = relations(socialLink, ({ one }) => ({
+	about: one(about, {
+		fields: [socialLink.about_id],
+		references: [about.id]
+	})
+}));
+
+export const resumeFileRelations = relations(resumeFile, ({ one }) => ({
+	about: one(about, {
+		fields: [resumeFile.about_id],
+		references: [about.id]
+	})
+}));

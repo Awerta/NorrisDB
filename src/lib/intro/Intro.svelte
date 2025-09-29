@@ -3,6 +3,7 @@
 	import Icon from '@iconify/svelte';
 	let {
 		introData = {
+			translation: { first_name: '', last_name: '' },
 			email: '',
 			website: '',
 			phone: '',
@@ -23,11 +24,14 @@
 		<img
 			src="{import.meta.env.VITE_SITE_ADDRESS}/images/profile.jpg"
 			class="mask mask-squircle size-40 overflow-hidden rounded-3xl object-cover"
-			alt={m.name()}
+			alt={`${introData.translation.first_name} ${introData.translation.last_name}`}
 		/>
 	</div>
 	<div class="bg-base-300 text-base-content rounded-box grid w-full p-4">
-		<span class="text-3xl font-black tracking-tighter">{m.name()}</span>
+		<span class="text-3xl font-black tracking-tighter">
+			{introData.translation.first_name}
+			{introData.translation.last_name}
+		</span>
 		<div class="text-base-content/60 mt-2 text-sm">
 			<span>{introData.latestJob.position}</span> @ <span>{introData.latestJob.company}</span>
 		</div>

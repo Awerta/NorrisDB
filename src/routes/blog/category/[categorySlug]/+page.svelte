@@ -54,9 +54,9 @@
 
 <!-- SEO Meta Tags -->
 <MetaTags
-	title={`${m.blog()}: ${_.capitalize(data.categorySlug)} - ${m.name()}`}
+	title={`${m.blog()}: ${_.capitalize(data.categorySlug)} - ${data.translation.first_name} ${data.translation.last_name}}`}
 	titleTemplate="%s"
-	description={`${m.blog()}: ${_.capitalize(data.categorySlug)} - ${m.name()}`}
+	description={`${m.blog()}: ${_.capitalize(data.categorySlug)} - ${data.translation.first_name} ${data.translation.last_name}}`}
 	canonical="{import.meta.env.VITE_SITE_ADDRESS}/{currentLocale !== 'en'
 		? `/${currentLocale}/blog`
 		: '/blog'}/{data.categorySlug}"

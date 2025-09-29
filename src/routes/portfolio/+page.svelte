@@ -29,109 +29,108 @@
 		galleryImages?: string[];
 	}
 
+	let { data } = $props();
 	/* -------------------------
 	   Props / Data
 	-------------------------- */
 	// Portfolio items with different categories (sample data)
-	let {
-		items = [
-			// Example: Video item with YouTube embed
-			{
-				id: 1,
-				category: 'video',
-				title: 'YouTube Video',
-				img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/1.jpeg`,
-				link: 'https://www.youtube-nocookie.com/embed/Ga6RYejo6Hk'
-			},
-			// Example: Audio item
-			{
-				id: 2,
-				category: 'audio',
-				title: 'Audio Project',
-				img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/2.jpeg`,
-				link: 'https://audio-samples.github.io/samples/mp3/blizzard_unconditional/sample-0.mp3'
-			},
-			// External link example
-			{
-				id: 3,
-				category: 'links',
-				title: 'Link Project',
-				img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/3.jpeg`,
-				url: 'https://example.com'
-			},
-			// Simple image item
-			{
-				id: 4,
-				category: 'image',
-				title: 'Image Project',
-				img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/4.jpeg`
-			},
-			{
-				id: 5,
-				category: 'image',
-				title: 'Image Project',
-				img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/5.jpeg`
-			},
-			{
-				id: 6,
-				category: 'image',
-				title: 'Image Project',
-				img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/6.jpeg`
-			},
-			// HTML content inside lightbox
-			{
-				id: 7,
-				category: 'content',
-				title: 'Content Project',
-				img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/6.jpeg`,
-				html: '# This is html content',
-				link: 'https://contentlink.com'
-			},
-			// Local video file
-			{
-				id: 8,
-				category: 'video',
-				title: 'Video Project',
-				img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/7.jpeg`,
-				link: 'https://examplefiles.org/files/video/mp4-example-video-download-640x480.mp4'
-			},
-			// Gallery item with multiple images
-			{
-				id: 9,
-				category: 'gallery',
-				title: 'Graphic Design',
-				img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/graphicDesign1.jpeg`,
-				galleryImages: [
-					`${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/graphicDesign1.jpeg`,
-					`${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/graphicDesign2.jpeg`,
-					`${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/graphicDesign3.jpeg`
-				]
-			},
-			// Another gallery
-			{
-				id: 10,
-				category: 'gallery',
-				title: 'Architecture',
-				img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/arc4.jpeg`,
-				galleryImages: [
-					`${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/arc1.jpeg`,
-					`${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/arc2.jpeg`,
-					`${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/arc3.jpeg`,
-					`${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/arc4.jpeg`
-				]
-			},
-			// Long content example
-			{
-				id: 11,
-				category: 'content',
-				title: 'Content Project 2',
-				img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/2.jpeg`,
-				html: '<p class="text-base-content"> ... long HTML content ... </p>',
-				link: 'https://contentlink.com'
-			}
-		] as WorkItem[]
-	} = $props(); // Items can also be passed as props
-
+	// Items can also be passed as props
+	let items = [
+		// Example: Video item with YouTube embed
+		{
+			id: 1,
+			category: 'video',
+			title: 'YouTube Video',
+			img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/1.jpeg`,
+			link: 'https://www.youtube-nocookie.com/embed/Ga6RYejo6Hk'
+		},
+		// Example: Audio item
+		{
+			id: 2,
+			category: 'audio',
+			title: 'Audio Project',
+			img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/2.jpeg`,
+			link: 'https://audio-samples.github.io/samples/mp3/blizzard_unconditional/sample-0.mp3'
+		},
+		// External link example
+		{
+			id: 3,
+			category: 'links',
+			title: 'Link Project',
+			img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/3.jpeg`,
+			url: 'https://example.com'
+		},
+		// Simple image item
+		{
+			id: 4,
+			category: 'image',
+			title: 'Image Project',
+			img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/4.jpeg`
+		},
+		{
+			id: 5,
+			category: 'image',
+			title: 'Image Project',
+			img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/5.jpeg`
+		},
+		{
+			id: 6,
+			category: 'image',
+			title: 'Image Project',
+			img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/6.jpeg`
+		},
+		// HTML content inside lightbox
+		{
+			id: 7,
+			category: 'content',
+			title: 'Content Project',
+			img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/6.jpeg`,
+			html: '# This is html content',
+			link: 'https://contentlink.com'
+		},
+		// Local video file
+		{
+			id: 8,
+			category: 'video',
+			title: 'Video Project',
+			img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/7.jpeg`,
+			link: 'https://examplefiles.org/files/video/mp4-example-video-download-640x480.mp4'
+		},
+		// Gallery item with multiple images
+		{
+			id: 9,
+			category: 'gallery',
+			title: 'Graphic Design',
+			img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/graphicDesign1.jpeg`,
+			galleryImages: [
+				`${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/graphicDesign1.jpeg`,
+				`${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/graphicDesign2.jpeg`,
+				`${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/graphicDesign3.jpeg`
+			]
+		},
+		// Another gallery
+		{
+			id: 10,
+			category: 'gallery',
+			title: 'Architecture',
+			img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/arc4.jpeg`,
+			galleryImages: [
+				`${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/arc1.jpeg`,
+				`${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/arc2.jpeg`,
+				`${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/arc3.jpeg`,
+				`${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/arc4.jpeg`
+			]
+		},
+		// Long content example
+		{
+			id: 11,
+			category: 'content',
+			title: 'Content Project 2',
+			img: `${import.meta.env.VITE_SITE_ADDRESS}/images/portfolio/2.jpeg`,
+			html: '<p class="text-base-content"> ... long HTML content ... </p>',
+			link: 'https://contentlink.com'
+		}
+	] as WorkItem[];
 	// Category filters with icons
 	const categories = [
 		{ name: m.all(), slug: 'all', icon: 'hugeicons:check-list' },
@@ -323,7 +322,7 @@
 									{m.view_gallery()}
 								</a>
 								<div class="w-30 rounded-box flex overflow-hidden shadow-2xl shadow-black">
-									{#each item.galleryImages as galleryImage}
+									{#each item.galleryImages ?? [] as galleryImage}
 										<img
 											src={galleryImage}
 											alt="My portfolio gallery {item.id}"
@@ -352,9 +351,9 @@
 
 <!-- SEO Meta Tags -->
 <MetaTags
-	title={`${m.name()} - ${m.portfolio()}`}
+	title={`${data.translation.first_name} ${data.translation.last_name} - ${m.portfolio()}`}
 	titleTemplate="%s"
-	description={`${m.name()} . ${m.portfolio()}`}
+	description={`${data.translation.first_name} ${data.translation.last_name} . ${m.portfolio()}`}
 	canonical="{import.meta.env.VITE_SITE_ADDRESS}/{currentLocale !== 'en'
 		? `${currentLocale}/`
 		: ''}portfolio"

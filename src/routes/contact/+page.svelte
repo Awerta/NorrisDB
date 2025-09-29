@@ -96,9 +96,9 @@
 
 <!-- SEO meta tags for this page -->
 <MetaTags
-	title={`${m.name()} - ${m.contact()}`}
+	title={`${data.translation.first_name} ${data.translation.last_name} - ${m.contact()}`}
 	titleTemplate="%s"
-	description={`${m.name()} . ${m.contact()}`}
+	description={`${data.translation.first_name} ${data.translation.last_name} . ${m.contact()}`}
 	canonical="{import.meta.env.VITE_SITE_ADDRESS}/{currentLocale !== 'en'
 		? `${currentLocale}/`
 		: ''}contact"

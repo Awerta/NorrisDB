@@ -10,14 +10,13 @@
 	import MobileNavbar from '$lib/layout/MobileNavbar.svelte';
 
 	let { children, data } = $props();
-	console.log('main', data);
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<MobileNavbar />
+<MobileNavbar mobileNavbarData={data} />
 
 <div class="bg-base-100 text-base-content lg:py-8">
 	<div class="bg-base-200 card mx-auto flex max-w-7xl items-center justify-center p-2">
@@ -44,7 +43,9 @@
 
 	<!-- Copyright Text -->
 	<div class="text-base-content/70 mb-14 flex justify-center py-2 text-center text-xs lg:mb-0">
-		{@html m.copyright_text({ name: m.name() })}
+		{@html m.copyright_text({
+			name: `${data.translation.first_name} ${data.translation.last_name}`
+		})}
 	</div>
 </div>
 <BottomMobileMenu />

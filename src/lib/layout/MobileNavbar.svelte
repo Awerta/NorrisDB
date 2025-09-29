@@ -4,12 +4,28 @@
 	import { getLocale } from '$lib/paraglide/runtime';
 	import Icon from '@iconify/svelte';
 	let currentLocale = $state(getLocale());
+
+	let {
+		mobileNavbarData = {
+			translation: { first_name: '', last_name: '' },
+			email: '',
+			website: '',
+			phone: '',
+			latestJob: { company: '', position: '' },
+			resumeFile: { file_url: '' },
+			socialLinks: [{ icon: '', platform_name: '', url: '' }]
+		}
+	} = $props();
 </script>
 
 <div class="navbar bg-base-100 flex items-center justify-between shadow-sm lg:hidden">
 	<a href="{currentLocale !== 'en' ? `/${currentLocale}` : ''}/" class="flex items-center gap-2">
-		<img src="{import.meta.env.VITE_SITE_ADDRESS}/images/profile.jpg" class="mask mask-squircle size-10" alt={m.name()} />
-		<span class="text-xl">{m.name()}</span>
+		<img
+			src="{import.meta.env.VITE_SITE_ADDRESS}/images/profile.jpg"
+			class="mask mask-squircle size-10"
+			alt={`${mobileNavbarData.translation.first_name} ${mobileNavbarData.translation.last_name}`}
+		/>
+		<span class="text-xl">{mobileNavbarData.translation.first_name} {mobileNavbarData.translation.last_name}</span>
 	</a>
 	<div>
 		<!-- Open the modal using ID.showModal() method -->

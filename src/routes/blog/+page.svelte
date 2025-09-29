@@ -43,9 +43,9 @@
 
 <!-- SEO Meta Tags -->
 <MetaTags
-	title={`${m.blog()} - ${m.name()}`}
+	title={`${m.blog()} - ${data.translation.first_name} ${data.translation.last_name}`}
 	titleTemplate="%s"
-	description={`${m.blog()}: ${m.category()} - ${m.name()}`}
+	description={`${m.blog()}: ${m.category()} - ${data.translation.first_name} ${data.translation.last_name}`}
 	canonical="{import.meta.env.VITE_SITE_ADDRESS}/{currentLocale !== 'en'
 		? `/${currentLocale}/blog`
 		: '/blog'}"

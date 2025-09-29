@@ -11,6 +11,7 @@ export const blogPost = pgTable('blog_post', {
 
 // A separate table for multilingual content
 export const blogPostTranslation = pgTable('blog_post_translation', {
+	id: serial('id').primaryKey(),
 	post_id: integer('post_id')
 		.notNull()
 		.references(() => blogPost.id, { onDelete: 'cascade' }),

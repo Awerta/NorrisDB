@@ -1,0 +1,1 @@
+ALTER TABLE "blog_post_translation" ADD COLUMN "id" serial PRIMARY KEY NOT NULL;

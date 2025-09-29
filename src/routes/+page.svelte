@@ -76,7 +76,10 @@
 					<div class="stat-figure text-secondary">
 						<div class="avatar avatar-online">
 							<div class="w-16 rounded-full">
-								<img src="{import.meta.env.VITE_SITE_ADDRESS}/images/profile.jpg" alt={m.name()} />
+								<img
+									src="{import.meta.env.VITE_SITE_ADDRESS}/images/profile.jpg"
+									alt={`${data.translation.first_name} ${data.translation.last_name}`}
+								/>
 							</div>
 						</div>
 					</div>
@@ -91,23 +94,23 @@
 
 <!-- SEO Meta Tags -->
 <MetaTags
-	title={`${m.name()} - ${m.job_value()}`}
+	title={`${data.translation.first_name} ${data.translation.last_name} - ${data.latestJob.position}`}
 	titleTemplate="%s"
-	description={`${m.name()} . ${m.about_me_text()}`}
+	description={`${data.translation.first_name} ${data.translation.last_name} . ${data.translation.short_bio}`}
 	canonical={import.meta.env.VITE_SITE_ADDRESS}
 	robots="all"
 	openGraph={{
 		url: `${import.meta.env.VITE_SITE_ADDRESS}`,
-		title: `${m.name()} - ${m.job_value()}`,
-		description: `${m.name()} . ${m.about_me_text()}`,
+		title: `${data.translation.first_name} ${data.translation.last_name} - ${data.latestJob.position}`,
+		description: `${data.translation.first_name} ${data.translation.last_name} . ${data.translation.short_bio}`,
 		images: [
 			{
 				url: `${import.meta.env.VITE_SITE_ADDRESS}/images/profile.jpg`,
 				width: 1000,
 				height: 666,
-				alt: `${m.name()} - ${m.job_value()}`
+				alt: `${data.translation.first_name} ${data.translation.last_name} - ${data.latestJob.position}`
 			}
 		],
-		siteName: m.name()
+		siteName: `${data.translation.first_name} ${data.translation.last_name}`
 	}}
 />

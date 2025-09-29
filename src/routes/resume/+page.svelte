@@ -46,9 +46,9 @@
 
 <!-- SEO Meta Tags -->
 <MetaTags
-	title={`${m.name()} - ${m.resume()}`}
+	title={`${data.translation.first_name} ${data.translation.last_name} - ${m.resume()}`}
 	titleTemplate="%s"
-	description={`${m.name()} . ${m.resume()}`}
+	description={`${data.translation.first_name} ${data.translation.last_name} . ${m.resume()}`}
 	canonical="{import.meta.env.VITE_SITE_ADDRESS}/{currentLocale !== 'en'
 		? `${currentLocale}/`
 		: ''}resume"

@@ -63,7 +63,7 @@
 			<!-- Author info -->
 			<div class="flex items-center space-x-1">
 				<Icon icon="hugeicons:quill-write-01" class="size-4" />
-				{@html m.written_by({ name: m.name(), link: '#' })}
+				{@html m.written_by({ name: 'John Doe', link: '#' })}
 			</div>
 
 			<!-- Date and category -->
@@ -179,9 +179,9 @@
 
 <!-- SEO Meta Tags -->
 <MetaTags
-	title={`${data.postData.title} - ${m.name()}`}
+	title={`${data.postData.title} - ${data.translation.first_name} ${data.translation.last_name}}`}
 	titleTemplate="%s"
-	description={`${data.postData.title} - ${m.name()}`}
+	description={`${data.postData.title} - ${data.translation.first_name} ${data.translation.last_name}}`}
 	canonical="{import.meta.env.VITE_SITE_ADDRESS}/{currentLocale !== 'en'
 		? `/${currentLocale}/blog`
 		: '/blog'}/{data.postData.slug}"

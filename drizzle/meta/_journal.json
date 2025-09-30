@@ -134,6 +134,27 @@
       "when": 1759149425317,
       "tag": "0018_married_starjammers",
       "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1759153489177,
+      "tag": "0019_white_giant_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "7",
+      "when": 1759154157705,
+      "tag": "0020_redundant_gateway",
+      "breakpoints": true
+    },
+    {
+      "idx": 21,
+      "version": "7",
+      "when": 1759154414855,
+      "tag": "0021_known_zuras",
+      "breakpoints": true
     }
   ]
 }

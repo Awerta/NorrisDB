@@ -72,5 +72,6 @@
 	"reply": "Reply",
 	"posted_in": "<span>Posted in</span><a href=\"{link}\" class=\"text-accent\">{category}</a>",
 	"written_by": "<span>by</span> <a href=\"{link}\" class=\"text-accent\">{name}</a>",
-	"copyright_text": "Made with ❤️ in Japan <br class=\"md:hidden\" /> © 2025 {name}. All rights reserved."
+	"copyright_text": "Made with ❤️ in Japan <br class=\"md:hidden\" /> © 2025 {name}. All rights reserved.",
+	"message_sent": "Your message has been sent!"
 }

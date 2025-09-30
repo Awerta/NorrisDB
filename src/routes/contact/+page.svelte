@@ -1,4 +1,7 @@
 <script lang="ts">
+	import axios from 'axios';
+	import * as yup from 'yup';
+
 	import { m } from '$lib/paraglide/messages.js'; // localized messages (m) for multi-language text
 	import { blur } from 'svelte/transition'; // Svelte transition for blur effect on page load/unload
 	import Icon from '@iconify/svelte'; // Icon component from Iconify for displaying vector icons
@@ -9,6 +12,63 @@
 	let currentLocale = $state(getLocale());
 
 	let { data } = $props();
+
+	let name = $state('');
+	let email = $state('');
+	let message = $state('');
+	let status = $state('');
+
+	const schema = yup.object({
+		name: yup
+			.string()
+			.trim()
+			.required('Name is required')
+			.min(2, 'Too short')
+			.max(100, 'Too long')
+			.matches(/^[\p{L}\s]+$/u, 'Write alphabet only'),
+		email: yup.string().required('Email is required').email('Invalid email').lowercase(),
+		message: yup
+			.string()
+			.required('Message is required')
+			.min(5, 'Message too short')
+			.max(499, 'Too long')
+			.matches(/^[\p{L}\p{N}\p{P}\p{M}\p{Z}\p{S}]+$/u, 'Write a valid sentence')
+	});
+
+	let submitted = $state(false);
+	let isValid = $state(false);
+	function formSubmit() {
+		submitted = true;
+		if (isValid) {
+			sendMessage();
+		}
+	}
+	$effect(() => {
+		isValid = schema.isValidSync({ name, email, message });
+	});
+	async function sendMessage() {
+		try {
+			// Validate inputs
+			await schema.validate({ name, email, message });
+
+			const response = await axios.post('/api/message', {
+				name,
+				email,
+				message
+			});
+
+			if (response.status === 200) {
+				status = 'Message sent successfully!';
+				// name = email = message = '';
+			}
+		} catch (error: any) {
+			if (error.name === 'ValidationError') {
+				status = error.message;
+			} else {
+				status = error.response?.data?.error || 'Failed to send message';
+			}
+		}
+	}
 </script>
 
 <!-- Page container with blur transition -->
@@ -81,14 +141,45 @@
 
 			<!-- Simple form inputs (no backend handling here) -->
 			<div class="grid gap-4">
-				<fieldset class="fieldset">
-					<input type="text" placeholder={m.full_name()} class="input w-full max-w-xs" />
-					<input type="email" placeholder={m.email_address()} class="input w-full max-w-xs" />
-					<textarea class="textarea w-full" placeholder={m.your_message()}></textarea>
-					<button class="btn btn-primary rounded-box w-min text-nowrap">
-						{m.send_message()}
-					</button>
-				</fieldset>
+				<form onsubmit={formSubmit}>
+					<fieldset class="fieldset">
+						<input
+							type="text"
+							placeholder={m.full_name()}
+							class="input w-full max-w-xs"
+							bind:value={name}
+							required
+						/>
+
+						<input
+							type="email"
+							placeholder={m.email_address()}
+							class="input w-full max-w-xs"
+							bind:value={email}
+							required
+						/>
+
+						<textarea
+							class="textarea w-full"
+							placeholder={m.your_message()}
+							bind:value={message}
+							required
+						></textarea>
+						<button
+							type="submit"
+							disabled={!isValid}
+							class="btn btn-primary rounded-box w-min text-nowrap"
+						>
+							{m.send_message()}
+						</button>
+						{#if submitted && isValid}
+							<div role="alert" class="alert alert-success">
+								<Icon icon="hugeicons:sent-02" class="size-6" />
+								<span>{m.message_sent()}</span>
+							</div>
+						{/if}
+					</fieldset>
+				</form>
 			</div>
 		</div>
 	</div>

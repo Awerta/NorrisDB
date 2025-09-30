@@ -72,5 +72,6 @@
 	"reply": "返信",
 	"posted_in": "<a href=\"{link}\" class=\"text-accent\">{category}</a> <span>に投稿</span>",
 	"written_by": "<a href=\"{link}\" class=\"text-accent\">{name}</a> <span>による</span>",
-	"copyright_text": "日本で❤️を込めて作られました <br class=\"md:hidden\" /> © 2025 {name}。無断転載を禁じます。"
+	"copyright_text": "日本で❤️を込めて作られました <br class=\"md:hidden\" /> © 2025 {name}。無断転載を禁じます。",
+	"message_sent": "あなたのメッセージが送信されました！"
 }

@@ -25,7 +25,9 @@
 			class="mask mask-squircle size-10"
 			alt={`${mobileNavbarData.translation.first_name} ${mobileNavbarData.translation.last_name}`}
 		/>
-		<span class="text-xl">{mobileNavbarData.translation.first_name} {mobileNavbarData.translation.last_name}</span>
+		<span class="text-xl"
+			>{mobileNavbarData.translation.first_name} {mobileNavbarData.translation.last_name}</span
+		>
 	</a>
 	<div>
 		<!-- Open the modal using ID.showModal() method -->
@@ -39,7 +41,7 @@
 						<Icon icon="hugeicons:multiplication-sign" class="size-6" />
 					</button>
 				</form>
-				<Intro />
+				<Intro introData={mobileNavbarData} />
 			</div>
 			<form method="dialog" class="modal-backdrop">
 				<button>close</button>

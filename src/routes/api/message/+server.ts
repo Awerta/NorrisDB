@@ -11,7 +11,7 @@ const schema = yup.object({
 		.string()
 		.required()
 		.min(2, 'Too short')
-		.max(100, 'Too long')
+		.max(80, 'Too long')
 		.matches(/^[\p{L}\s]+$/u, 'Write alphabet only'),
 	email: yup.string().required().email(),
 	message: yup

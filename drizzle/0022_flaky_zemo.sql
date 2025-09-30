@@ -1,0 +1,1 @@
+ALTER TABLE "contact_message" ALTER COLUMN "name" SET DATA TYPE char(80);
